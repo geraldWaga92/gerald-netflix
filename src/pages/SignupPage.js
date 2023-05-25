@@ -3,6 +3,9 @@ import Header from "../components/Header";
 import BackgroundImage from "../components/BackgroundImage";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { firebaseAuth } from "../utils/firebase-config";
+
 
 const SignupPage = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -13,11 +16,16 @@ const SignupPage = () => {
     const handleSignIn = async () => {
         try {
             const { email, password } = formValues;
-            //   await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            await createUserWithEmailAndPassword(firebaseAuth, email, password)
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
-    };
+    }
+
+    onAuthStateChanged(firebaseAuth, (currentUser) => {
+        if (currentUser) navigate('/')
+    })
+
     return (
         <Container>
             <BackgroundImage />
