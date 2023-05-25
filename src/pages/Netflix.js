@@ -7,48 +7,48 @@ import TopNav from "../components/TopNav";
 import SliderContainer from "../components/SliderContainer";
 
 const Netflix = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
 
-    window.onscroll = () => {
-        setIsScrolled(window.pageYOffset === 0 ? false : true);
-        return () => (window.onscroll = null);
-    };
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
 
-    return (
-        <HeroContainer>
-            <div className="hero">
-                <TopNav isScrolled={isScrolled} />
-                <img
-                    className="background-image"
-                    src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1668267540/NetflixApp/avengers-age-of-ultron-team-together-poster-wallpaper-1600x600-92751_84_qvwbif.jpg"
-                    alt=""
-                />
-                <div className="container">
-                    <div className="title">
-                        <h1>Super man</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-                            tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrum exercitationem ullam corporis suscipit
-                            laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
-                            iure reprehenderit in voluptate velit esse cillum dolore eu
-                        </p>
-                    </div>
-                    <div className="buttons">
-                        <button onClick={() => navigate("/player")} className="playBtn">
-                            Play
-                        </button>
-                        <button className="moreBtn">More</button>
-                    </div>
-                </div>
-            </div>
-            {/* <SliderContainer /> */}
-        </HeroContainer>
-    );
+  return (
+    <HeroContainer>
+      <div className="hero">
+        <TopNav isScrolled={isScrolled} />
+        <img
+          className="background-image"
+          src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1668267540/NetflixApp/avengers-age-of-ultron-team-together-poster-wallpaper-1600x600-92751_84_qvwbif.jpg"
+          alt=""
+        />
+        <div className="container">
+          <div className="title">
+            <h1>The Avengers</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
+              tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrum exercitationem ullam corporis suscipit
+              laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
+              iure reprehenderit in voluptate velit esse cillum dolore eu
+            </p>
+          </div>
+          <div className="buttons">
+            <button onClick={() => navigate("/player")} className="playBtn">
+              Play
+            </button>
+            <button className="moreBtn">More</button>
+          </div>
+        </div>
+      </div>
+      {/* <SliderContainer /> */}
+    </HeroContainer>
+  );
 };
 
 const HeroContainer = styled.div`
