@@ -43,8 +43,8 @@ const TopNav = ({ isScrolled }) => {
         </div>
 
         <div className="rightSide">
-          <button onClick={()=>signOut(firebaseAuth)}>
-            <AiOutlineLogout />
+          <button onClick={() => signOut(firebaseAuth)}>
+            <AiOutlineLogout title="logout" />
           </button>
         </div>
       </nav>
