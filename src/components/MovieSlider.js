@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-// import Card from "./Card";
+import Card from "./Card";
 import styled from "styled-components";
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
@@ -36,7 +36,7 @@ export default React.memo(function MovieSlider({ data, title }) {
         </div>
         <div className="slider" ref={listRef}>
           {data.map((movie, index) => {
-            // return <Card movieData={movie} index={index} key={movie.id} />;
+            return <Card movieData={movie} index={index} key={movie.id} />;
           })}
         </div>
         <div className={`slider-action right ${!controlVisibility ? 'none' : ''}`}>

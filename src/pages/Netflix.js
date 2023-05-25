@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { fetchMovies, getGenres } from "../store";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import TopNav from "../components/TopNav";
@@ -10,6 +10,21 @@ const Netflix = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navigate = useNavigate();
+
+  const movies = useSelector((state) => state.netflix.movies)
+  const generesLoaded = useSelector((state) => state.netflix.generesLoaded)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getGenres());
+  }, []);
+
+  useEffect(() => {
+    if (generesLoaded) {
+      dispatch(fetchMovies({ type: "all" }))
+    }
+  });
 
 
 
