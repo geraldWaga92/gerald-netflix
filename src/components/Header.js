@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import Logo from "../top-logo.png"
 
 const Header = (props) => {
     const navigate = useNavigate()
     return (
         <HeaderContainer>
             <div className='logo'>
-                <img src='https://res.cloudinary.com/ehizeex-shop/image/upload/v1668265433/NetflixApp/2560px-Netflix_2015_logo.svg_rbicwl_knwp6f.png'
+                <img src={Logo}
                     alt='no internet connection'
                 />
             </div>

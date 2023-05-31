@@ -3,6 +3,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { firebaseAuth } from "../utils/firebase-config";
+import Logo from '../top-logo.png'
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -27,7 +28,7 @@ const TopNav = ({ isScrolled }) => {
         <div className="leftSide">
           <div className="logo">
             <img
-              src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1668265433/NetflixApp/2560px-Netflix_2015_logo.svg_rbicwl_knwp6f.png"
+              src={Logo}
               alt="logo"
             />
           </div>
@@ -83,8 +84,8 @@ const NavContainer = styled.div`
     align-items: center;
    }
    img{
-    width: 10rem;
-    height: 2rem;
+    width: 15rem;
+    height: 2.5rem;
    }
   }
   .links{

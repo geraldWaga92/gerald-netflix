@@ -7,7 +7,7 @@ import { RiThumbUpFill, RiThumbDownFill } from "react-icons/ri";
 import { BiChevronDown } from "react-icons/bi";
 import { BsCheck } from "react-icons/bs";
 
- export default React.memo(function Card({movieData}){ 
+export default React.memo(function Card({ movieData }) {
   const [onHovered, setOnHovered] = useState(false);
   const navigate = useNavigate();
   return (
@@ -33,11 +33,12 @@ import { BsCheck } from "react-icons/bs";
               autoPlay
               loop
               controls
+              muted
             />
           </div>
           <div className="info-container">
             <h3 className="movieName" onClick={() => navigate("/player")}>
-             {movieData.name}
+              {movieData.name}
             </h3>
             <div className="icons">
               <div className="controls">
@@ -56,7 +57,7 @@ import { BsCheck } from "react-icons/bs";
             </div>
             <div className="genres">
               <ul>
-                {movieData.genres.map((genre)=>{
+                {movieData.genres.map((genre) => {
                   <li>{genre}</li>
                 })}
               </ul>
@@ -66,7 +67,7 @@ import { BsCheck } from "react-icons/bs";
       )}
     </CardContainer>
   );
-} );
+});
 
 const CardContainer = styled.div`
   margin-top: 1rem;
@@ -115,6 +116,7 @@ const CardContainer = styled.div`
         top: 0;
         z-index: 4;
         position: absolute;
+        
       }
     }
     .info-container {

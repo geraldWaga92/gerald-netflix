@@ -33,6 +33,8 @@ const Netflix = () => {
     return () => (window.onscroll = null);
   };
 
+  // console.log(movies);
+
   return (
     <HeroContainer>
       <div className="hero">
@@ -61,7 +63,7 @@ const Netflix = () => {
           </div>
         </div>
       </div>
-      {/* <SliderContainer /> */}
+      <SliderContainer movies={movies} />
     </HeroContainer>
   );
 };
